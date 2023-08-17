@@ -1,11 +1,14 @@
 import { useSelector } from "react-redux";
-
+import { useEffect } from "react";
 // components
 import CartItem from "./CartItem";
+
 
 function CartList() {
   const carts = useSelector(state => state.app.carts);
   const cost = useSelector(state => state.app.cost);
+ 
+  
 
   return (
     <div className="card">

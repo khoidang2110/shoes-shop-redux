@@ -8,11 +8,13 @@ function ProductItem({ product }) {
   const carts = useSelector(state => state.app.carts);
   const dispatch = useDispatch();
   const isAdded = carts.some(cart => cart.id === product.id);
-
+ 
   function _handleAddCart() {
     if(isAdded) return;
-    // console.log("product", product)
+    console.log("product", product)
     dispatch(addCart(product))
+    console.log("carts",carts)
+    console.log(isAdded)
   }
 
   return (
@@ -39,7 +41,7 @@ function ProductItem({ product }) {
           style={{ 
             opacity: isAdded ? 0.5 : 1,
             cursor: isAdded ? 'not-allowed' : 'pointer',
-          }}
+          }} 
         >
           <p>{isAdded ? 'Added' : 'ADD TO CART'}</p>
         </div>

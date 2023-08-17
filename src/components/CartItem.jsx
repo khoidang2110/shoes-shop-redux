@@ -4,20 +4,25 @@ import { useDispatch } from "react-redux"
 // actions
 import { removeCart, incrementCost, decrementCost } from "../redux/app.actions"
 
+
 function CartItem({ cart }) {
+ 
   // console.log("cart", cart)
   const dispatch = useDispatch();
-
+ 
   function _handleRemove() {
     dispatch(removeCart(cart.id))
+   
   }
 
   function _handleIncrementCost() {
     dispatch(incrementCost(cart.id))
+    
   }
 
   function _handleDecrementCost() {
     dispatch(decrementCost(cart.id))
+    
   }
 
   return (
